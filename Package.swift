@@ -15,7 +15,8 @@ let package = Package(
         .package(url: "https://github.com/vapor/fluent.git", from: "3.0.0-rc"),
 
         // 🐘 Non-blocking, event-driven Swift client for PostgreSQL.
-        .package(url: "https://github.com/vapor/postgresql.git", from: "1.0.0-rc.2"),
+		// Temporary GIT while https://github.com/vapor/postgresql/pull/66 is being reviewed.
+		.package(url: "https://github.com/Sorix/postgresql/tree/fix_jsonb", branch: "fix_jsonb"),
     ],
     targets: [
         .target(name: "FluentPostgreSQL", dependencies: ["Async", "Fluent", "FluentSQL", "PostgreSQL"]),
